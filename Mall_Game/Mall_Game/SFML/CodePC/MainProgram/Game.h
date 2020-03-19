@@ -1,7 +1,12 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <thread>
+#include <mutex>
+
 #include "ResourceManager.h"
 #include "GameState.h"
+#include "Clock.h"
+
 class Game
 {
 public:
@@ -13,18 +18,20 @@ public:
 	void run();
 
 private:
-	sf::Clock clock;
+	Clock clock;
 	sf::Time elapsedTimeSinceLastUpdate;
 	sf::Time timePerFrame;
 	sf::RenderWindow window;
 	ResourceManager* rm;
 	GameState* currentState;
 
-private:
+	std::thread renderThread;
+
 	void update();
 	void handleEvent();
 	void render();
-
+	void render2();
+	std::mutex mutex;
 
 };
 

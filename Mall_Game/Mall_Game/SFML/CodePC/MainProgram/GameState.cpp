@@ -11,3 +11,8 @@ GameState::GameState(ResourceManager* rm):
 GameState::~GameState()
 {
 }
+
+ResourceManager* GameState::getRm() const
+{
+	return rm;
+}

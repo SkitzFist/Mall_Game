@@ -20,17 +20,17 @@ PlayState::~PlayState()
 
 GameState * PlayState::handleEvent(const sf::Event & event)
 {
-	state = this;
+	GameState* state = this;
 
 	return state;
 }
 
-GameState * PlayState::update(sf::Time delta)
+GameState * PlayState::update(float delta)
 {
-	state = this;
+	GameState* state = this;
 
-	text.setString(std::to_string(delta.asSeconds()));
-
+	float fps = 1.0f / delta;
+	text.setString(std::to_string(fps));
 	return state;
 }
 
@@ -43,10 +43,10 @@ void PlayState::render(sf::RenderWindow&  window) const
 
 void PlayState::setupText()
 {
-	text.setFont(*rm->getBasicFont());
+	text.setFont(*getRm()->getBasicFont());
 	sf::Vector2f pos{
-		rm->getWindowWidth() / 2.f,
-		rm->getWindowHeight() / 2.f
+		getRm()->getWindowWidth() / 2.f,
+		getRm()->getWindowHeight() / 2.f
 	};
 	text.setPosition(pos);
 }

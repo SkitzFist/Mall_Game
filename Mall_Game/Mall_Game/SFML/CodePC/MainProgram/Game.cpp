@@ -3,7 +3,7 @@
 #include <thread>
 #include <chrono>
 
-Game::Game():
+Game::Game() :
 	window(sf::VideoMode(WIDTH, HEIGHT), "Mall"),
 	timePerFrame(sf::seconds(1.0f / 60.0f)),
 	elapsedTimeSinceLastUpdate(sf::Time::Zero)
@@ -34,7 +34,7 @@ void Game::handleEvent()
 
 		if (currentState != nullptr) {
 			currentState->handleEvent(event);
-		}	
+		}
 		if (event.type == sf::Event::Closed ||
 			event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape) {
 			window.close();
@@ -44,6 +44,8 @@ void Game::handleEvent()
 
 void Game::run()
 {
+	clock.restartClock();
+
 	while (window.isOpen())
 	{
 		handleEvent();
@@ -54,17 +56,9 @@ void Game::run()
 
 void Game::update()
 {
-	elapsedTimeSinceLastUpdate += clock.restart();
-	while(elapsedTimeSinceLastUpdate >= timePerFrame) {
-		sf::Time delta;
-		float dt = std::fmin(elapsedTimeSinceLastUpdate.asSeconds(), timePerFrame.asSeconds());
-		delta = sf::seconds(dt);
-
-		if(currentState != nullptr) {
-			currentState->update(delta);
-		}
-
-		elapsedTimeSinceLastUpdate -= delta;
+	clock.restartClock();
+	if (currentState != nullptr) {
+		currentState->update(clock.delta());
 	}
 }
 
@@ -76,4 +70,15 @@ void Game::render()
 		currentState->render(window);
 	}
 	window.display();
+}
+
+void Game::render2()
+{
+	mutex.lock();
+	window.clear();
+	if (currentState != nullptr) {
+		currentState->render(window);
+	}
+	window.display();
+	mutex.unlock();
 }

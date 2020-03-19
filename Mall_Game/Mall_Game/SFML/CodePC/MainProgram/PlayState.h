@@ -9,7 +9,7 @@ public:
 
 	// Inherited via GameState
 	virtual GameState * handleEvent(const sf::Event & event) override;
-	virtual GameState * update(sf::Time delta) override;
+	virtual GameState * update(float delta) override;
 	virtual void render(sf::RenderWindow& window) const override;
 
 
