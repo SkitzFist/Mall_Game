@@ -1,7 +1,5 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <thread>
-#include <mutex>
 
 #include "ResourceManager.h"
 #include "GameState.h"
@@ -25,13 +23,13 @@ private:
 	ResourceManager* rm;
 	GameState* currentState;
 
-	std::thread renderThread;
+	sf::Thread renderThread;
+	sf::Mutex mutex;
 
 	void update();
 	void handleEvent();
 	void render();
 	void render2();
-	std::mutex mutex;
 
 };
 

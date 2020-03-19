@@ -7,6 +7,7 @@ Game::Game() :
 	window(sf::VideoMode(WIDTH, HEIGHT), "Mall"),
 	timePerFrame(sf::seconds(1.0f / 60.0f)),
 	elapsedTimeSinceLastUpdate(sf::Time::Zero)
+
 {
 	//config
 
@@ -14,7 +15,7 @@ Game::Game() :
 	//setup
 	rm = new ResourceManager();
 	rm->windowSetup(WIDTH, HEIGHT);
-
+	
 	currentState = new PlayState(rm);
 
 	//debug
