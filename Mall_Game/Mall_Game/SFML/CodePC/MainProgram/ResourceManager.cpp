@@ -16,6 +16,7 @@ ResourceManager::ResourceManager()
 ResourceManager::~ResourceManager()
 {
 	delete basicFont;
+	delete test_Char;
 }
 
 void ResourceManager::windowSetup(int width, int height)
@@ -34,15 +35,34 @@ int ResourceManager::getWindowHeight() const
 	return windowHeight;
 }
 
+void ResourceManager::loadDebug()
+{
+	test_Char = new sf::Texture();
+	if (!(test_Char->loadFromFile("../Textures/test_char.png"))) {
+		cantLoad(L"Can't load test_char.png");
+	}
+}
+
 void ResourceManager::basicSetup()
 {
 	basicFont = new sf::Font();
 	if (!basicFont->loadFromFile("../Fonts/segoui.ttf")) {
-		std::cerr << "Could not load font segoui.ttf" << std::endl;
+		cantLoad(L"Can't load segoui.ttf");
 	}
+}
+
+void ResourceManager::loadTextures()
+{
+
+
 }
 
 sf::Font * ResourceManager::getBasicFont()
 {
 	return basicFont;
+}
+
+void ResourceManager::cantLoad(LPCWSTR theerror)
+{
+	MessageBox(nullptr, theerror, L"ERROR", MB_ICONWARNING | MB_OK);
 }

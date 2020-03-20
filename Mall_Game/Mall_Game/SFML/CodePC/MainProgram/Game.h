@@ -17,19 +17,17 @@ public:
 
 private:
 	Clock clock;
-	sf::Time elapsedTimeSinceLastUpdate;
-	sf::Time timePerFrame;
 	sf::RenderWindow window;
 	ResourceManager* rm;
 	GameState* currentState;
 
-	sf::Thread renderThread;
-	sf::Mutex mutex;
+	//sf::Thread renderThread;
+	//sf::Mutex mutex;
 
 	void update();
 	void handleEvent();
 	void render();
-	void render2();
+	void RenderWithThread();
 
 };
 

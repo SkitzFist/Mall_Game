@@ -31,6 +31,12 @@
     <Filter Include="Time">
       <UniqueIdentifier>{6b4fb69f-48c4-4e3f-a1df-e0b6104085a6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects">
+      <UniqueIdentifier>{6db3bfe9-fc4a-4794-b64e-d570c4e5d720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameState\LoadState">
+      <UniqueIdentifier>{e94a669f-51d7-499d-a4e8-7f75295aea6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,6 +57,12 @@
     <ClCompile Include="Clock.cpp">
       <Filter>Time</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadState.cpp">
+      <Filter>GameState\LoadState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -67,6 +79,12 @@
     </ClInclude>
     <ClInclude Include="Clock.h">
       <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadState.h">
+      <Filter>GameState\LoadState</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,22 +1,16 @@
 #include "Game.h"
-#include "PlayState.h"
-#include <thread>
-#include <chrono>
+#include "LoadState.h"
 
-Game::Game() :
-	window(sf::VideoMode(WIDTH, HEIGHT), "Mall"),
-	timePerFrame(sf::seconds(1.0f / 60.0f)),
-	elapsedTimeSinceLastUpdate(sf::Time::Zero)
-
+Game::Game()
 {
 	//config
 
-
 	//setup
+	window.create(sf::VideoMode(WIDTH, HEIGHT), "Mall_Game");
 	rm = new ResourceManager();
 	rm->windowSetup(WIDTH, HEIGHT);
 	
-	currentState = new PlayState(rm);
+	currentState = new LoadState(rm);
 
 	//debug
 }
@@ -34,10 +28,9 @@ void Game::handleEvent()
 	while (window.pollEvent(event)) {
 
 		if (currentState != nullptr) {
-			currentState->handleEvent(event);
+			currentState = currentState->handleEvent(event);
 		}
-		if (event.type == sf::Event::Closed ||
-			event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape) {
+		if (event.type == sf::Event::Closed) {
 			window.close();
 		}
 	}
@@ -52,6 +45,7 @@ void Game::run()
 		handleEvent();
 		update();
 		render();
+		//renderThread.launch();
 	}
 }
 
@@ -59,7 +53,7 @@ void Game::update()
 {
 	clock.restartClock();
 	if (currentState != nullptr) {
-		currentState->update(clock.delta());
+		currentState  = currentState->update(clock.delta());
 	}
 }
 
@@ -73,13 +67,13 @@ void Game::render()
 	window.display();
 }
 
-void Game::render2()
+void Game::RenderWithThread()
 {
-	mutex.lock();
-	window.clear();
-	if (currentState != nullptr) {
-		currentState->render(window);
-	}
-	window.display();
-	mutex.unlock();
+	//mutex.lock();
+	//window.clear();
+	//if (currentState != nullptr) {
+	//	currentState->render(window);
+	//}
+	//window.display();
+	//mutex.unlock();
 }
