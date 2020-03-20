@@ -37,6 +37,9 @@
     <Filter Include="GameState\LoadState">
       <UniqueIdentifier>{e94a669f-51d7-499d-a4e8-7f75295aea6b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{f512919b-d97e-454d-bcee-3800738eedcd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="LoadState.h">
       <Filter>GameState\LoadState</Filter>
+    </ClInclude>
+    <ClInclude Include="Debugging.h">
+      <Filter>Util</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

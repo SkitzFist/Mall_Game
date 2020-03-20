@@ -28,8 +28,10 @@ GameState * PlayState::handleEvent(const sf::Event & event)
 GameState * PlayState::update(float delta)
 {
 	GameState* state = this;
+	for (int i = 0; i < 1000000; ++i) {
 
-	float fps = 1.0f / delta;
+	}
+	float fps = (1.0f / delta) / 100.f;
 	text.setString(std::to_string(fps));
 	return state;
 }

@@ -1,6 +1,10 @@
 #include "Game.h"
 #include "LoadState.h"
 
+//debug
+#include "Debugging.h"
+#include "PlayState.h"
+
 Game::Game()
 {
 	//config
@@ -9,9 +13,8 @@ Game::Game()
 	window.create(sf::VideoMode(WIDTH, HEIGHT), "Mall_Game");
 	rm = new ResourceManager();
 	rm->windowSetup(WIDTH, HEIGHT);
+	currentState = new PlayState(rm);
 	
-	currentState = new LoadState(rm);
-
 	//debug
 }
 
@@ -45,7 +48,6 @@ void Game::run()
 		handleEvent();
 		update();
 		render();
-		//renderThread.launch();
 	}
 }
 
@@ -53,7 +55,7 @@ void Game::update()
 {
 	clock.restartClock();
 	if (currentState != nullptr) {
-		currentState  = currentState->update(clock.delta());
+		currentState = currentState->update(clock.delta());
 	}
 }
 
@@ -65,15 +67,4 @@ void Game::render()
 		currentState->render(window);
 	}
 	window.display();
-}
-
-void Game::RenderWithThread()
-{
-	//mutex.lock();
-	//window.clear();
-	//if (currentState != nullptr) {
-	//	currentState->render(window);
-	//}
-	//window.display();
-	//mutex.unlock();
 }

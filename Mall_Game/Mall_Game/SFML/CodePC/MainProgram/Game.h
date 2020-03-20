@@ -1,4 +1,6 @@
 #pragma once
+#include <thread>
+#include <mutex>
 #include <SFML/Graphics.hpp>
 
 #include "ResourceManager.h"
@@ -21,13 +23,9 @@ private:
 	ResourceManager* rm;
 	GameState* currentState;
 
-	//sf::Thread renderThread;
-	//sf::Mutex mutex;
-
 	void update();
 	void handleEvent();
 	void render();
-	void RenderWithThread();
 
 };
 
