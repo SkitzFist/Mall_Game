@@ -92,5 +92,8 @@
     <ClInclude Include="Debugging.h">
       <Filter>Util</Filter>
     </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Util</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

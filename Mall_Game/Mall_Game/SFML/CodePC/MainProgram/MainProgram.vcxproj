@@ -185,6 +185,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="LoadState.h" />
+    <ClInclude Include="Math.h" />
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Clock.h" />

@@ -8,7 +8,7 @@ ResourceManager::ResourceManager()
 
 	//setup
 	basicSetup();
-
+	loadDebug();
 	//debug
 }
 
