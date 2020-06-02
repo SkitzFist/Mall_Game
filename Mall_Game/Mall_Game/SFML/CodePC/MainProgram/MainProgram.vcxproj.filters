@@ -40,11 +40,11 @@
     <Filter Include="Util">
       <UniqueIdentifier>{f512919b-d97e-454d-bcee-3800738eedcd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{922fdbc4-15da-4c5f-b8f5-6a104700c6ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameState.cpp">
       <Filter>GameState</Filter>
     </ClCompile>
@@ -53,9 +53,6 @@
     </ClCompile>
     <ClCompile Include="PlayState.cpp">
       <Filter>GameState\PlayState</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>GameState</Filter>
     </ClCompile>
     <ClCompile Include="Clock.cpp">
       <Filter>Time</Filter>
@@ -66,11 +63,12 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameState.h">
       <Filter>GameState</Filter>
     </ClInclude>
@@ -94,6 +92,9 @@
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

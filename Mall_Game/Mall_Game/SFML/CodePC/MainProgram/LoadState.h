@@ -2,6 +2,7 @@
 #include <thread>
 
 #include "GameState.h"
+
 class LoadState :
 	public GameState
 {
