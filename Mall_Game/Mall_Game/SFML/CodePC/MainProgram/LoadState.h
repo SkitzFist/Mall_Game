@@ -15,6 +15,9 @@ public:
 
 private:
 	int progress;
+	int numberOfThreads;
+	int isDone;
+	int add;
 
 	std::thread textureThread;
 

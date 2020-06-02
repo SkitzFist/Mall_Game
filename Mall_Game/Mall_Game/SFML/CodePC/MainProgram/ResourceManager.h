@@ -1,6 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <Windows.h>
+
+//TODO :: Remake this to an abstract class
+//		  So that you could have rm_lvl1 for instance.
+
 class ResourceManager
 {
 public:

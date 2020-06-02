@@ -13,7 +13,7 @@ Game::Game()
 	window.create(sf::VideoMode(WIDTH, HEIGHT), "Mall_Game");
 	rm = new ResourceManager();
 	rm->windowSetup(WIDTH, HEIGHT);
-	currentState = new PlayState(rm);
+	currentState = new LoadState(rm);
 	
 	//debug
 }

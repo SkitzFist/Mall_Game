@@ -4,8 +4,16 @@
 LoadState::LoadState(ResourceManager* rm):
 	GameState(rm)
 {
+	//config
+	numberOfThreads = 1;
+
+	//setup
 	progress = 0;
+	isDone = 100 / numberOfThreads;
+	add = 100 / numberOfThreads;
 	textureThread = std::thread(&LoadState::loadTextures, this);
+
+	//debug
 }
 
 LoadState::~LoadState()
@@ -25,7 +33,7 @@ GameState* LoadState::update(float delta)
 {
 	GameState* state = this;
 
-	if (progress > 98) {
+	if (progress >= isDone) {
 		state = new PlayState(getRm());
 		delete this;
 	}
@@ -41,5 +49,5 @@ void LoadState::loadTextures()
 {
 
 	getRm()->loadDebug();
-	progress += 100;
+	progress += add;
 }
