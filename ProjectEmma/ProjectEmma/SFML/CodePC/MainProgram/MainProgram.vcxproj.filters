@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GameState">
+      <UniqueIdentifier>{9b4b4c74-399d-4749-9a1a-ac739597157c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameState\MenuState">
+      <UniqueIdentifier>{49289e6a-b714-4b8f-a3a2-2e30af84fe6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameState\PlayState">
+      <UniqueIdentifier>{4bce64fd-36ad-4e3c-8b63-52e2dae6b6e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager">
+      <UniqueIdentifier>{5ae1bce6-2144-4366-83f8-3bf8a65be256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{a357063a-dc7d-4315-850c-b4ec802dc5c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{6b4fb69f-48c4-4e3f-a1df-e0b6104085a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects">
+      <UniqueIdentifier>{6db3bfe9-fc4a-4794-b64e-d570c4e5d720}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameState\LoadState">
+      <UniqueIdentifier>{e94a669f-51d7-499d-a4e8-7f75295aea6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{f512919b-d97e-454d-bcee-3800738eedcd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{922fdbc4-15da-4c5f-b8f5-6a104700c6ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Animal">
+      <UniqueIdentifier>{f06c712a-603d-40d3-b65f-3059bc4ae9d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Animal\Factory">
+      <UniqueIdentifier>{3ea48aa8-f8d5-4f28-86f5-692424823996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Animal\Behaviours">
+      <UniqueIdentifier>{53dde84b-fbc9-4bc2-8a52-a6819e4c972f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Animal\Behaviours\Movebehaviours">
+      <UniqueIdentifier>{6c2a16b3-4551-467e-9b1b-74d91fb26132}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Animal\AnimalHandler">
+      <UniqueIdentifier>{e7fda31c-1e5f-4765-9dab-0a08b08bc9e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Animal\AnimalHandler\SubHandler">
+      <UniqueIdentifier>{35401871-5563-468d-bcec-59b8a231ee1d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameState.cpp">
+      <Filter>GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>GameState\PlayState</Filter>
+    </ClCompile>
+    <ClCompile Include="Clock.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadState.cpp">
+      <Filter>GameState\LoadState</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Animal.cpp">
+      <Filter>GameObjects\Animal</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimalFactory.cpp">
+      <Filter>GameObjects\Animal\Factory</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveBehaviour.cpp">
+      <Filter>GameObjects\Animal\Behaviours\Movebehaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimalHandler.cpp">
+      <Filter>GameObjects\Animal\AnimalHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimalSubHandler.cpp">
+      <Filter>GameObjects\Animal\AnimalHandler\SubHandler</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameState.h">
+      <Filter>GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>GameState\PlayState</Filter>
+    </ClInclude>
+    <ClInclude Include="Clock.h">
+      <Filter>Time</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadState.h">
+      <Filter>GameState\LoadState</Filter>
+    </ClInclude>
+    <ClInclude Include="Debugging.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Animal.h">
+      <Filter>GameObjects\Animal</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimalFactory.h">
+      <Filter>GameObjects\Animal\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveBehaviour.h">
+      <Filter>GameObjects\Animal\Behaviours\Movebehaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomNumbers.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimalHandler.h">
+      <Filter>GameObjects\Animal\AnimalHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimalSubHandler.h">
+      <Filter>GameObjects\Animal\AnimalHandler\SubHandler</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
